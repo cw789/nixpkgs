@@ -17,6 +17,8 @@ rec {
     # R23
     erlangR23 = lib.callErlang ../development/interpreters/erlang/R23.nix {
       wxGTK = wxGTK30;
+      # Can be enabled since the bug has been fixed in https://github.com/erlang/otp/pull/2508
+      parallelBuild = true;
     };
     erlangR23_odbc = erlangR23.override { odbcSupport = true; };
     erlangR23_javac = erlangR23.override { javacSupport = true; };
@@ -28,6 +30,8 @@ rec {
     # R22
     erlangR22 = lib.callErlang ../development/interpreters/erlang/R22.nix {
       wxGTK = wxGTK30;
+      # Can be enabled since the bug has been fixed in https://github.com/erlang/otp/pull/2508
+      parallelBuild = true;
     };
     erlangR22_odbc = erlangR22.override { odbcSupport = true; };
     erlangR22_javac = erlangR22.override { javacSupport = true; };
